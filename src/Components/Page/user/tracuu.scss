@@ -1,0 +1,71 @@
+@import "../../../Global_scss/Mixin.scss";
+.TraCuuDonHang {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(109, 56, 114),
+    rgb(37, 102, 48)
+  );
+  padding: 50px 0;
+  text-align: center;
+  .inputTraCuu {
+    input {
+      text-align: center;
+      width: 35%;
+      font-size: 1.7rem;
+      border: 2px solid #fff;
+      border-radius: 20px;
+      transition: all 1s;
+      outline: none;
+      padding-left: 10px;
+      @include responsive(sm) {
+        width: 50%;
+      }
+      &:focus {
+        width: 90%;
+        border: 2px solid aqua;
+        box-shadow: 0 0 3px 3px rgba($color: aqua, $alpha: 0.4),
+          0 0 10px 10px rgba($color: #fff, $alpha: 0.5);
+        background-color: #000;
+        color: #fc0;
+      }
+    }
+  }
+  h1 {
+    text-shadow: 2px 2px 30px rgb(81, 255, 0);
+    color: rgb(0, 255, 98);
+    margin-bottom: 60px;
+  }
+  h5 {
+    color: #f03;
+    @include responsive(lg) {
+      font-size: 1.4rem;
+    }
+  }
+  .QuanLyDonHang__content {
+    .donHangUser {
+      margin: 45px auto;
+      border: 2px solid #f00;
+      box-shadow: 0 0 5px 5px rgba($color: rgb(255, 0, 0), $alpha: 0.65),
+        0 0 10px 10px rgba($color: rgb(255, 251, 0), $alpha: 0.3);
+      .DeleteCartAPI {
+        button {
+          margin: 30px 20px;
+          border: 1px solid aqua;
+          box-shadow: 0 0 4px 4px rgba($color: #fff, $alpha: 0.4);
+          &:hover {
+            background-color: #000;
+            color: #fc0;
+            box-shadow: 0 0 8px 8px rgba($color: aqua, $alpha: 0.4);
+          }
+        }
+      }
+      p#copyMDH {
+        background-color: #000;
+        color: aqua;
+        border: 1px solid aqua;
+        border-radius: 15px;
+      }
+    }
+  }
+}

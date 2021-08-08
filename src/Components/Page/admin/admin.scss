@@ -1,0 +1,99 @@
+.page__admin {
+  background-color: #001;
+  text-align: center;
+  padding: 30px 0 60px;
+  h1 {
+    color: #f60;
+  }
+  .alert-danger {
+    width: 200px;
+    margin: auto;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 0 4px 5px aqua;
+  }
+  // =======================
+  #scrollAdmin::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+  }
+  #scrollAdmin::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #f60;
+  }
+  #scrollAdmin::-webkit-scrollbar-track {
+    background-color: #5f5858;
+  }
+  // =======================
+  .admin__table {
+    margin: 30px 5% 0;
+    overflow: scroll;
+    height: 500px;
+    background-color: rgb(238, 231, 231);
+
+    .th-table {
+      min-width: 150px;
+    }
+    thead {
+      tr {
+        background-color: rgb(255, 208, 0);
+        font-size: 1.2rem;
+      }
+    }
+    tbody {
+      tr {
+        font-size: 1.1rem;
+        td {
+          padding-top: 30px;
+          padding-bottom: 20px;
+          button {
+            transition: all 0.4s;
+            &:hover {
+              box-shadow: 0 0 3px 3px aqua;
+            }
+          }
+        }
+        &:hover {
+          background-color: rgb(54, 53, 53);
+          color: #fc0;
+          box-shadow: inset 0 0 3px 3px aqua;
+        }
+      }
+    }
+  }
+  .admin__update {
+    padding: 20px 0 20px;
+    span {
+      color: #f60;
+      font-size: 1.2rem;
+    }
+    input {
+      transition: all 1s;
+      width: 50%;
+      margin: 0 auto;
+      border-radius: 20px;
+      font-size: 1.4rem;
+      box-shadow: 0 0 4px 4px rgba($color: #200, $alpha: 0.4);
+      &:focus {
+        background-color: #002;
+        color: #fc0;
+        width: 80%;
+        box-shadow: inset 0 0 1px 1px rgba($color: #000000, $alpha: 0.5),
+          0 0 2px 2px aqua, 0 0 5px 5px rgba($color: #fff, $alpha: 0.2);
+      }
+    }
+    .admin__button {
+      button {
+        font-size: 14px;
+        box-shadow: 0 0 5px 5px rgba($color: #fff, $alpha: 0.3);
+        &:hover {
+          background-color: #001;
+          color: #fc0;
+          box-shadow: 0 0 3px 3px aqua,
+            0 0 6px 6px rgba($color: aqua, $alpha: 0.4);
+        }
+      }
+    }
+  }
+}

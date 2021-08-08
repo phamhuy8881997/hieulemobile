@@ -1,0 +1,411 @@
+// ***********************************************************
+// =============header=================
+// color-main
+$color-bg-dark0: #57578a;
+//color-header
+$color-bg-dark1: rgb(80, 97, 128);
+
+$color-txt-red0: #f00;
+$color-txt-red1: #f50;
+$color-txt-red2: #f60;
+$color-txt-red3: #fa0;
+
+//color logo
+$color-linear-bg-logo: linear-gradient(60deg, #f6fa01, #07f8f8);
+// =============header=================
+// ***********************************************************
+// =============main===================
+// =============main===================
+// ***********************************************************
+// =============foodter================
+// =============foodter================
+// ***********************************************************
+@import "./Mixin.scss";
+// -------
+@mixin boderProduct {
+  padding: 20px 40px;
+  @include responsive(sm) {
+    padding: 15px 7px;
+  }
+}
+// ------------------
+@mixin HeaddingTitle1 {
+  background-color: black;
+  color: #fc0;
+  border-radius: 0 60px 0 60px;
+  width: 50%;
+  padding: 15px 30px;
+  @include responsive(sm) {
+    width: 60%;
+  }
+  h1 {
+    font-size: 3.5rem;
+    @include responsive(lg) {
+      font-size: 2rem;
+    }
+    @include responsive(sm) {
+      font-size: 1.2rem;
+    }
+  }
+}
+// ------------------
+@mixin CardItem {
+  .card {
+    position: relative;
+    margin: 0;
+    transition: all 0.5s;
+    overflow: hidden;
+    border: 2px solid rgba(200, 200, 200, 0.6);
+    @include responsive(sm) {
+      height: 340px;
+    }
+    #triangle_down {
+      position: absolute;
+      transform: translateX(-50%);
+      top: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-top: 20px solid #e911117c;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      animation: trigger1 3s linear 0s infinite;
+      visibility: hidden;
+    }
+    .card-body {
+      font-size: 1.6rem;
+      transition: all 1s;
+      position: relative;
+      @include responsive(md) {
+        font-size: 1rem;
+      }
+      h5 {
+        background-color: transparent;
+        padding: 5px;
+        border-radius: 10px;
+        @include responsive(xl) {
+          font-size: 1.2rem !important;
+        }
+        @include responsive(xs) {
+          font-size: 0.9rem !important;
+        }
+      }
+      .card-title {
+        transition: all 0.5s;
+        font-weight: bold;
+        font-size: 1.6rem;
+        @include responsive(md) {
+          font-size: 1rem;
+        }
+      }
+      .card-body__line {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        background-image: linear-gradient(
+          to left,
+          rgb(0, 118, 214),
+          rgb(241, 11, 11)
+        );
+        border-radius: 5px;
+        width: 0%;
+        margin: 0 auto;
+        visibility: hidden;
+        transition: all 1s;
+      }
+      #triangle_left {
+        position: absolute;
+        top: -30px;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-top: 25px solid transparent;
+        border-right: 25px solid rgba($color: #0776f5, $alpha: 0.5);
+        border-bottom: 25px solid transparent;
+        transform: translateX(50px);
+        transition: all 1s;
+        visibility: hidden;
+      }
+      #triangle_right {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-top: 25px solid transparent;
+        border-left: 25px solid rgba($color: #0776f5, $alpha: 0.5);
+        border-bottom: 25px solid transparent;
+        transform: translateX(-50px);
+        transition: all 1s;
+        visibility: hidden;
+      }
+      .card-text {
+        span.text__price {
+          font-size: 1.4rem;
+          @include responsive(xl) {
+            font-size: 1.1rem;
+          }
+          @include responsive(sm) {
+            font-size: 0.8rem;
+          }
+        }
+        span.text__price-sale {
+          text-decoration: line-through;
+          font-style: italic;
+          color: #f02;
+        }
+      }
+    }
+    &:hover {
+      box-shadow: 0px 0px 5px 5px rgba(0, 0, 1, 0.5);
+      border: 2px solid #001;
+      background-color: rgba(131, 130, 129, 0.356);
+      .card-body {
+        h5 {
+          background-color: #000;
+          color: #fc0;
+          transform: translateX(180deg);
+        }
+        .card-text {
+          span {
+            color: rgb(0, 78, 223);
+            font-weight: bold;
+          }
+        }
+        .card-body__line {
+          visibility: visible;
+          width: 60%;
+        }
+        .btn.hover__overlay {
+          opacity: 1;
+        }
+      }
+      #triangle_left,
+      #triangle_right,
+      #triangle_down {
+        transform: translateX(0);
+        visibility: visible;
+      }
+      .card__img {
+        img {
+          transform: rotateY(180deg);
+        }
+      }
+    }
+    .card__img {
+      overflow: hidden;
+      height: 260px;
+      @include responsive(lg) {
+        height: 240px;
+        margin-top: -15px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: all 1s;
+      }
+    }
+    button {
+      padding: 7px 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: 2px solid transparent;
+      box-shadow: 3px 3px 3px rgba(0, 0, 1, 0.5);
+      transition: all 0.5s;
+      @include responsive(md) {
+        padding: 4px 8px;
+        font-size: 1rem;
+      }
+      &:hover {
+        box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.644),
+          0 0 2px 2px rgba($color: #000, $alpha: 0.7),
+          0 0 4px 4px rgba($color: #000, $alpha: 0.3);
+        border: 1px solid rgb(78, 70, 70);
+      }
+    }
+    .btn.hover__overlay {
+      transition: all 1s;
+      opacity: 0;
+      @include responsive(xl) {
+        opacity: 1;
+      }
+    }
+    .card_sale1 {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      padding: 5px;
+      background-color: transparent;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-position: center;
+        background-color: #fff;
+        border-radius: 50%;
+        transition: all 0.5;
+        box-shadow: 0 0 1px 2px rgba($color: #fff, $alpha: 0.4),
+          0 0 8px 9px rgba($color: #ffd000, $alpha: 0.5),
+          0 0 10px 12px rgba($color: #fff, $alpha: 0.7);
+      }
+      .cart__img-sale {
+        width: 210px;
+        height: 50px;
+        @include responsive(sm) {
+          width: 160px;
+          height: 30px;
+        }
+        background-color: rgba($color: #0f0, $alpha: 0.3);
+        text-align: center;
+        h3 {
+          line-height: 50px;
+          @include responsive(sm) {
+            font-size: 1.4rem;
+            line-height: 30px;
+          }
+        }
+        transform: rotate(45deg) translate(30%, -100%);
+      }
+      .cart__img-sale1 {
+        @extend .cart__img-sale;
+        background-color: rgba($color: rgb(111, 0, 255), $alpha: 0.3);
+      }
+    }
+  }
+}
+// -------------------
+@mixin CardModal {
+  .modal-content {
+    width: 70vw;
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    @include responsive(sm) {
+      width: 85vw;
+      top: 10vh;
+    }
+    hr {
+      border-top: 3px solid rgb(70, 113, 204);
+      width: 80%;
+    }
+    .modal-body {
+      font-size: 1.6rem;
+      height: 70vh;
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+    .modal__title {
+      .modal__title--img {
+        padding: 0 20%;
+        height: 350px;
+        border: 2px solid rgba(0, 0, 0, 0.055);
+        overflow: hidden;
+        @include responsive(sm) {
+          height: 250px;
+        }
+      }
+      img.img__modal {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background-position: center;
+        transition: all 1s;
+        transform: scale(1.2);
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+      .Xem-chi-tiet {
+        a.btn {
+          font-size: 2rem;
+          font-weight: bolder;
+          box-shadow: 4px 4px 4px rgba($color: #000000, $alpha: 0.6),
+            8px 8px 8px rgba($color: #000000, $alpha: 0.2);
+          transition: all 0.3s;
+          &:hover {
+            box-shadow: inset 0 0 2px 2px rgba($color: #000000, $alpha: 0.6),
+              0 0 5px 8px rgba($color: #000000, $alpha: 0.6);
+          }
+        }
+      }
+      .modal__title--text {
+        padding: 0 10%;
+        text-align: left;
+      }
+      .title__1 {
+        padding: 20px 18%;
+        text-align: center;
+        .title__1--imgConfig {
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+          }
+        }
+      }
+    }
+    .modal-header {
+      position: relative;
+      button.close {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        line-height: 5px;
+        text-align: center;
+        top: 15px;
+        right: 15px;
+        font-size: 1.8rem !important;
+        background-color: rgba(255, 0, 0, 0.5);
+        border-radius: 50%;
+        &:hover {
+          background-color: #fc0;
+        }
+      }
+    }
+
+    #style-scroll::-webkit-scrollbar {
+      width: 9px;
+      background-color: #fff;
+    }
+    #style-scroll::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-image: linear-gradient(to top, #f00, #00f);
+    }
+    #style-scroll::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      background-color: #f5f5f5;
+    }
+  }
+}
+// -------
+// -------
+// -------
+// -------
+@keyframes trigger1 {
+  0% {
+    top: 0;
+    transform: translateX(-50%);
+    border-top: 20px solid #e911117c;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+  }
+  100% {
+    top: 50px;
+    transform: translateX(-50%);
+    border-top: 10px solid #e911117c;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    opacity: 0;
+  }
+}

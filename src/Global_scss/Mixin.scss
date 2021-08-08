@@ -1,0 +1,27 @@
+// *************************mixin*****************************
+
+// **********************Responsive*************************
+// responsive
+$breakpoint: (
+  "xx": 1367px,
+  "xl": 1200.5px,
+  "lg": 992.5px,
+  "md": 768.5px,
+  "sm": 576.5px,
+  "xs": 400px,
+);
+// responsive
+@mixin responsive($screen) {
+  @if (map-has-key($map: $breakpoint, $key: $screen)) {
+    $value: map-get(
+      $map: $breakpoint,
+      $key: $screen,
+    );
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn ('screen ko hop le');
+  }
+}
+// **********************Responsive*************************
