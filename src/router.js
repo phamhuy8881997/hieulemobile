@@ -1,14 +1,15 @@
-import Home from "./Components/Page/home/home";
-import CartShop from "./Components/Page/cartShop/cartShop";
-import Admin from "./Components/Page/admin/admin";
-import AdminCart from "./Components/Page/admin/adminCart";
-import AdminBanner from "./Components/Page/admin/adminBanner/adminBanner";
-import News from "./Components/Page/news/news";
-import Login from "./Components/Page/login/login";
-import UserCart from "./Components/Page/user/traCuuDonHang";
-import UserPrintPDF from "./Components/Page/user/userPrintPDF";
-import ProductAll from "./Components/Page/productAll/productAll";
-import ProductSelect from "./Components/Page/productSelect/productSelect";
+import Home from "./component/page/home/home";
+import CartShop from "./component/page/cartShop/cartShop";
+import Admin from "./component/page/admin/admin";
+import AdminCart from "./component/page/admin/adminCart";
+import AdminBanner from "./component/page/admin/adminBanner/adminBanner";
+import News from "./component/page/news/news";
+import Login from "./component/page/login/login";
+import UserCart from "./component/page/user/traCuuDonHang";
+import UserPrintPDF from "./component/page/user/userPrintPDF";
+import ProductAll from "./component/page/productAll/productAll";
+import ProductSelect from "./component/page/productSelect/productSelect";
+
 import { Redirect } from "react-router-dom";
 
 const route = [
@@ -76,9 +77,10 @@ const route = [
     ),
   },
   {
-    path: "",
+    path: "*",
     exact: false,
     main: () => <Redirect to="/" />,
   },
 ];
 export default route;
+// main: () => <Redirect to="/" />,

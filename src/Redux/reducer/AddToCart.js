@@ -2,12 +2,13 @@ import * as typess from "../constant/index";
 
 let intinial = [];
 const AddToCart = (state = intinial, action) => {
-  state = JSON.parse(localStorage.getItem("CartShopHieuMobile"));
+  if (JSON.parse(localStorage.getItem("CartShopHieuMobile"))) {
+    var temp = JSON.parse(localStorage.getItem("CartShopHieuMobile"));
+  } else {
+    temp = [];
+  }
+  state = [...temp];
   switch (action.type) {
-    case typess.GET_CART_TO_LOCALSTORE:
-      let data = action.data;
-      state = [...data];
-      return [...state];
     case typess.ADD_CART:
       let { product } = action;
       let index = state.findIndex((item) => item._id === product._id);

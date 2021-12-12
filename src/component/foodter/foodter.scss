@@ -1,0 +1,68 @@
+@import "../../component/global-scss/Mixin.scss";
+@import "../../component/global-scss/Variable.scss";
+.foodter {
+  @include boderProduct;
+  background-color: $color-bg-dark0;
+  color: azure;
+  li {
+    list-style-type: none;
+  }
+  .foodter0 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    text-align: center;
+    @include responsive(md) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-row-gap: 2px;
+    }
+    @include responsive(sm) {
+      display: none;
+    }
+    .foodter0__item {
+      background-color: #fc4;
+      color: #001;
+      font-size: 1.6rem;
+    }
+  }
+  .foodter1 {
+    font-size: 1.6rem;
+    padding: 40px 0;
+    .foodter1--3 {
+      @include responsive(md) {
+        display: none;
+      }
+    }
+    ul {
+      margin-left: -50px;
+      @include responsive(sm) {
+        margin-left: -30px;
+      }
+      li {
+        line-height: 30px;
+        i.fa-phone {
+          color: rgb(243, 197, 12);
+        }
+        i.fa-envelope {
+          color: rgb(255, 152, 68);
+        }
+        i.fa-map-marker-alt {
+          color: rgb(68, 255, 140);
+        }
+        i.fa-facebook {
+          color: rgb(68, 134, 255);
+        }
+        .fa-plus-circle {
+          color: rgb(68, 255, 68);
+        }
+        .fa-youtube {
+          color: #f01;
+        }
+      }
+    }
+  }
+  .foodter2 {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+}

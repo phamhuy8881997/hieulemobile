@@ -99,13 +99,14 @@ export const counter_amount = (id, count) => {
 };
 // =====================Counter-product========================
 // =====================GET-CART-LOCALSTORE====================
-export const get_cart_localStore = () => {
-  let data = JSON.parse(localStorage.getItem("CartShopHieuMobile"));
-  return {
-    type: typess.GET_CART_TO_LOCALSTORE,
-    data: data,
-  };
-};
+// export const get_cart_localStore = () => {
+//   let data = JSON.parse(localStorage.getItem("CartShopHieuMobile"));
+//   let data1 = [...data];
+//   return {
+//     type: typess.GET_CART_TO_LOCALSTORE,
+//     data: data1,
+//   };
+// };
 // =====================GET-CART-LOCALSTORE====================
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

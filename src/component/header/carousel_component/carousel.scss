@@ -1,0 +1,164 @@
+@import "../../../component/global-scss/Mixin.scss";
+@import "../../../component/global-scss/Variable.scss";
+.My__Carousel {
+  //background-color: $color-bg-dark0;
+  background-color: snow;
+  .container-fluid {
+    padding: 20px 40px;
+    @include responsive(sm) {
+      padding: 10px 5px;
+    }
+    .row.Carousel_content {
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+    }
+    #CarouselLeft {
+      ol.carousel-indicators {
+        @include responsive(lg) {
+          display: none;
+        }
+        li.active {
+          background-color: $color-txt-red2;
+        }
+        li {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          margin: 0 20px;
+          background-color: salmon;
+          &:hover {
+            background-color: $color-txt-red2;
+            opacity: 1;
+          }
+        }
+      }
+      span.carousel-control-prev-icon {
+        width: 40px;
+        height: 60px;
+        background-color: rgba(223, 179, 179, 0.568);
+        border: 3px solid $color-txt-red3;
+        border-right: none;
+        border-radius: 10px 0 0 10px;
+        @include responsive(sm) {
+          width: 20px;
+          height: 40px;
+        }
+        &:hover {
+          background-color: rgba(255, 0, 0, 0.555);
+        }
+      }
+      span.carousel-control-next-icon {
+        @extend span.carousel-control-prev-icon;
+        border-right: 3px solid $color-txt-red3;
+        border-left: none;
+        border-radius: 0 10px 10px 0;
+      }
+      .carousel-inner {
+        border-radius: 0 40px 0 40px;
+        overflow: hidden;
+        .carousel-item {
+          height: 500px;
+          @include responsive(lg) {
+            height: 450px;
+          }
+          @include responsive(xl) {
+            height: 400px;
+          }
+          @include responsive(md) {
+            height: 400px;
+          }
+          @include responsive(sm) {
+            height: 250px;
+          }
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            background-position: center;
+          }
+          .carousel-caption {
+            .btn__toLink {
+              font-weight: bolder;
+              &:hover {
+                box-shadow: 0 0 3px 3px rgba($color: aqua, $alpha: 0.5);
+              }
+            }
+          }
+          h5 {
+            color: #f02;
+            font-size: 1.4rem;
+            font-weight: bold;
+            @include responsive(sm) {
+              display: none;
+            }
+          }
+          p {
+            font-size: 1.2rem;
+            color: #fc0;
+          }
+        }
+      }
+    }
+    #myCarousel-banner {
+      @include responsive(lg) {
+        display: none;
+      }
+      ol.carousel-indicators {
+        li.active {
+          background-color: #f60;
+        }
+        li {
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          background-color: rgba($color: #fff, $alpha: 0.7);
+          margin: 0 15px;
+          &:hover {
+            background-color: #f60;
+            opacity: 1;
+          }
+        }
+      }
+      .carousel-inner {
+        border-radius: 0 40px 0 40px;
+        overflow: hidden;
+        .carousel-item {
+          height: 500px;
+
+          @include responsive(lg) {
+            height: 450px;
+          }
+          @include responsive(xl) {
+            height: 400px;
+          }
+          @include responsive(md) {
+            height: 400px;
+          }
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            background-position: center;
+          }
+        }
+      }
+      .carousel-caption {
+        bottom: 3vh;
+      }
+      .fa-angle-left,
+      .fa-angle-right {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: rgba($color: #f00, $alpha: 0.5);
+        font-size: 2.5rem;
+        line-height: 30px;
+        &:hover {
+          background-color: #fc0;
+          color: black;
+        }
+      }
+    }
+  }
+}

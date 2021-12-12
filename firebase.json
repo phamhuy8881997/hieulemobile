@@ -1,5 +1,10 @@
 {
   "hosting": {
+    "rewrites": [ {
+      "source": "**",
+      "destination": "/index.html"
+    } ],
+    "site": "Hieulemobile-3c673",
     "public": "build",
     "ignore": [
       "firebase.json",

@@ -1,5 +1,5 @@
-import Header from "./Components/Header/header_component/header";
-import Foodter from "./Components/Foodter/foodter";
+import Header from "./component/header/header_component/header";
+import Foodter from "./component/foodter/foodter";
 
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import routes from "./router";
@@ -54,7 +54,7 @@ class App extends Component {
                 className="scroll-to-top__content"
                 onClick={() => this.scrollToTop()}
               >
-                <i class="fa fa-arrow-alt-circle-up"></i>
+                <i className="fa fa-arrow-alt-circle-up"></i>
               </div>
             )}
           </div>
